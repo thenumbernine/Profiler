@@ -1,0 +1,8 @@
+C++ profiling code
+upon exit produces a call stack of functions with the following information:
+- how much time, including child calls, it contributed to each frame's execution
+- how much time, excluding child calls, it contributed to each frame's execution
+- what order it was in performance based on the exclusive time calculations
+- who called who
+
+it currently depends on headers found in the GLApp project
