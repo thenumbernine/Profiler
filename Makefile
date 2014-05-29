@@ -3,5 +3,5 @@ DIST_TYPE=dylib
 
 include ../GLApp/Makefile.mk
 
-INCLUDE_BASE+=../GLApp/include
+INCLUDE+=../GLApp/include
 
