@@ -1,4 +1,8 @@
 C++ profiling code
+
+just put PROFILE() at the beginning of whatever code you want to profile
+optionally PROFILE_BEGIN_FRAME() and PROFILE_END_FRAME() around your execution loop
+
 upon exit produces a call stack of functions with the following information:
 - how much time, including child calls, it contributed to each frame's execution
 - how much time, excluding child calls, it contributed to each frame's execution
