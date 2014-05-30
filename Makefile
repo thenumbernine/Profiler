@@ -1,5 +1,5 @@
-DIST_FILENAME=libProfiler.dylib
-DIST_TYPE=dylib
+DIST_FILENAME=Profiler
+DIST_TYPE=lib
 
 include ../GLApp/Makefile.mk
 
