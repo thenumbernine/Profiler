@@ -2,7 +2,7 @@
 
 namespace Profiler {
 
-Singleton<System> system;
+Common::Singleton<System> system;
 
 };
 

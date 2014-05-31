@@ -5,7 +5,7 @@
 
 namespace Profiler {
 
-extern Singleton<System> system;
+extern Common::Singleton<System> system;
 
 };
 
