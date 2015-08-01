@@ -9,4 +9,4 @@ upon exit produces a call stack of functions with the following information:
 - what order it was in performance based on the exclusive time calculations
 - who called who
 
-it currently depends on headers found in the GLApp project
+it currently depends on headers found in the Common project
