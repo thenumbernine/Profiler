@@ -1,0 +1,4 @@
+distName='Profiler'
+distType='lib'
+depends:append{'../Common'}
+pthread = true
