@@ -1,19 +1,19 @@
 #include "Profiler/Block.h"
 #include "Profiler/Profiler.h"
-#include "Profiler/getTime.h"
 
 namespace Profiler {
 
 Block::Block(const char *name_) : name(name_) {
 	lastProfiler = system->currentProfiler;
 	system->currentProfiler = this;
-	startTime = getTime();
+	startTime = std::chrono::high_resolution_clock::now();
 	subDurations = 0;
 }
 
 Block::~Block() {
-	double endTime = getTime();
-	double duration = endTime - startTime;
+	std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> diff = endTime - startTime;
+	double duration = diff.count();
 	if (lastProfiler) {
 		lastProfiler->subDurations += duration;
 	}

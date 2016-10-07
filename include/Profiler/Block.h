@@ -1,11 +1,14 @@
 #pragma once
 
+#include <chrono>
+
 namespace Profiler {
 
 struct Block {
 	
 	const char *name;
-	double startTime, subDurations;
+	std::chrono::high_resolution_clock::time_point startTime;
+	double subDurations;
 
 	Block *lastProfiler;
 	
@@ -13,5 +16,4 @@ struct Block {
 	~Block();
 };
 
-};
-
+}

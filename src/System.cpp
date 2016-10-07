@@ -1,5 +1,4 @@
 #include "Profiler/System.h"
-#include "Profiler/getTime.h"
 #include "Common/Exception.h"
 #include <iostream>
 #include <vector>
@@ -11,7 +10,6 @@ namespace Profiler {
 System::System()
 : currentProfiler(NULL)
 , rootName(NULL)
-, beginTime(0)
 , frames(0)
 {}
 
@@ -35,7 +33,10 @@ System::~System() {
 	}
 	//else throw Exception() << "need to run Profiler at least once";
 	
-	std::cout << "Average FPS: " << frames / (getTime() - beginTime) << std::endl;
+	std::chrono::high_resolution_clock::time_point endTime = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> diff = endTime - beginTime;
+	double duration = diff.count();
+	std::cout << "Average FPS: " << frames / duration << std::endl;
 }
 
 
@@ -43,7 +44,7 @@ void System::beginFrame() {
 	static bool initd = false;
 	if (!initd) {
 		initd = true;
-		beginTime = getTime();
+		beginTime = std::chrono::high_resolution_clock::now();
 		frames = 0;
 	}
 	//initialize accum values of all entries to zero

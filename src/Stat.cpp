@@ -1,5 +1,6 @@
 #include "Profiler/Stat.h"
 #include <cmath>
+#include <algorithm>	//std::min and std::max
 
 namespace Profiler {
 
