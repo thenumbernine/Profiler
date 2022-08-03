@@ -26,4 +26,3 @@ extern Common::Singleton<System> system;
 
 //place this at the end of your program update loop
 #define PROFILE_END_FRAME()		::Profiler::system->endFrame();
-
