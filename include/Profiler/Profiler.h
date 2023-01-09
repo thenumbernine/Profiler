@@ -2,6 +2,7 @@
 
 #include "Profiler/System.h"
 #include "Common/Singleton.h"
+#include "Common/Macros.h"	// LINE_STRING
 
 namespace Profiler {
 
@@ -9,11 +10,7 @@ extern Common::Singleton<System> system;
 
 };
 
-//http://stackoverflow.com/questions/3859944/combining-string-literals-and-integer-constants
-#define STRINGIZE_DETAIL_(v)	#v
-#define STRINGIZE(v) STRINGIZE_DETAIL_(v)
 #define FUNCTION_STRING	STRINGIZE(__func__)	//not working ... either in macro or inline
-#define LINE_STRING	STRINGIZE(__LINE__)
 #define PROFILE_NAME __FILE__ "(" LINE_STRING ")" //FUNCTION_STRING //function not expanding 
 
 //these are to be used externally:
