@@ -11,7 +11,7 @@ extern Common::Singleton<System> system;
 };
 
 #define FUNCTION_STRING	STRINGIZE(__func__)	//not working ... either in macro or inline
-#define PROFILE_NAME __FILE__ "(" LINE_STRING ")" //FUNCTION_STRING //function not expanding 
+#define PROFILE_NAME FILE_AND_LINE //FUNCTION_STRING //function not expanding 
 
 //these are to be used externally:
 
